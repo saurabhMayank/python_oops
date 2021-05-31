@@ -57,16 +57,28 @@ Right Pyramid is inheriting from square and traingle
 Right Pyramid mein Attributes -> Base and Slant height
 But Square mein attributes -> length and breadth hain
 
+The constructor attributes of parent and child are different
+
+So names of attributes are different between parent and child so this
+may cause bugs.
+
 """
 """
-Combining mro and keyword args (**kwargs) feature in Python
+Solution to the above problems:-
 
+If you combine the MRO and the **kwargs feature for specifying name-value pairs during construction, you can write code that passes parameters to parent classes even if they have different names.
 
+**kwargs has all the attributes like base, height, slant-height, length..
+The attributes can be taken by the class as per its need
+
+Like Square can only take length from it and leave the rest..
+
+Below example works well but it is fairly complicated to read
 """
 
 
 
-#Final Code Snippet
+# using **kwargs Code Snippet
 
 class Rectangle:
     def __init__(self, length, width, **kwargs):
