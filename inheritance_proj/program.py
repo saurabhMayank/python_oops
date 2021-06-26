@@ -1,8 +1,22 @@
 import employees
+import hr
+import productivity
 
-salary_employee = employees.SalaryEmployee(1, 'John Smith', 1500)
-hourly_employee = employees.HourlyEmployee(1, 'John Doe', 40, 15)
-commission_employee = employees.CommisionEmployee(3, 'kevin becon', 1000, 250)
+manager = employees.Manager(1, 'John Smith', 1500)
+secretary = employees.Secretary(1, 'Jone Doe', 1200)
+sales_person = employees.SalesPerson(3, 'kevin becon', 1000, 250)
+temporary_secretary = employees.TemporarySecretary(5, 'Robin Williams', 40, 9)
+
+employees = [
+    manager,
+    secretary,
+    sales_person,
+    temporary_secretary
+]
+
+productivity_system = productivity.ProductivitySystem()
+productivity_system.track(employees, 40)
+
 
 # Here if we pass generic_employee obj into the calculate payroll_method
 # of payroll system then it will break as generic_employee does not have calculate_payroll func
@@ -10,4 +24,4 @@ commission_employee = employees.CommisionEmployee(3, 'kevin becon', 1000, 250)
 # generic_employee = hr.Employee(4," Jaden Smith")
 
 payroll_system = hr.PayrollSystem()
-payroll_system.calculate_payroll([salary_employee, hourly_employee, commission_employee])
+payroll_system.calculate_payroll(employees)
