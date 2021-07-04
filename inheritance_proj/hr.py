@@ -6,3 +6,7 @@ class PayrollSystem:
             print(f'Payroll for:{employee.id}-{employee.name}')
             print(f'Check Amount: {employee.calculate_payroll()}')
             print('')
+            if employee.address:
+                print('-Sent to:-')
+                print(employee.address)
+                print('')

@@ -1,0 +1,51 @@
+"""
+ We’re not going to declare an .__init__() method here. This will mean that the Manager class will inherit the .__init__() method from SalaryEmployee implicitly, meaning that when we create a Manager object, we’ll need to pass in an id, a name, and a weekly_salary...
+"""
+#---------------------------------------------------------------------------------------
+# Python does not have interfaces because it has multiple inheritance.
+# --------------------------------------------------------------------------------------
+
+
+# __mro__ => TemporarySecretary, Secretary, SalaryEmployee, Hourly Employee, Employee, Object
+# Every class has its own mro.
+
+# In multiple Inheritance mro is from left to right.
+# First child class is executed and then the parent class is executed depending on 
+# left to right order in the inheritance chain
+
+# ------------------------------------------------------------------------------------
+# super does not call the parent class of the child class..
+# It uses the information in the mro list and then calls the class which is next in the mro list
+# not directly the parent class
+
+# For example here in the case of Temporary Secretary the mro order is
+# __mro__ => TemporarySecretary, Hourly Employee, Secretary, SalaryEmployee, Employee, Object
+
+# So it first calls the init method of class TemporarySecretary which does not have 5 arguments
+# Then it calls init method of Hourly employee, Inside init of hourly employee it calls super
+# So it calls next Class in the mro list that is Secretary which has 4 arguments so it throws an error
+
+"""
+class TemporarySecretary(HourlyEmployee, Secretary):
+    def __init__(self, id, name, hours_worked, hour_rate):
+        super.__init__(self, id, name, hours_worked, hour_rate)
+    
+    def calculate_payroll(self):
+        return HourlyEmployee.calculate_payroll(self)
+"""
+
+# So the correct method would be to directly call HourlyEmployee's init method inside temporary 
+# secretary init method, temporary secretary can be a secretary but it will be treated as 
+# an hourly employee for payment
+
+#  The TemporarySecretary class performs the role of a Secretary 
+#  in the context of the ProductivitySystem, but for payroll purposes, 
+#  it is an HourlyEmployee.
+
+"""
+ There is so much ambiguity with the temporary secretary because the class design has diamond pattern
+ in it. The diamond problem occurs as a consequence of bad class designing...
+ The diamond class design pattern causes a lot of ambiguity in which class to call..
+
+ More about the diamond problem and its resolution in the Notebook...
+"""

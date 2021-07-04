@@ -1,9 +1,16 @@
 import employees
 import hr
 import productivity
+from contacts import Address
 
 manager = employees.Manager(1, 'John Smith', 1500)
-secretary = employees.Secretary(1, 'Jone Doe', 1200)
+manager.address = Address(
+    '121 Admin Road',
+    'Concord',
+    'NH',
+    '03301'
+)
+secretary = employees.Secretary(2, 'Jone Doe', 1200)
 sales_person = employees.SalesPerson(3, 'kevin becon', 1000, 250)
 temporary_secretary = employees.TemporarySecretary(5, 'Robin Williams', 40, 9)
 
