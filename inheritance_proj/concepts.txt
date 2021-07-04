@@ -49,3 +49,10 @@ class TemporarySecretary(HourlyEmployee, Secretary):
 
  More about the diamond problem and its resolution in the Notebook...
 """
+
+Composition :-
+1) Composition defines a has a relationship between component class and the composite class.
+2) The composite class does not need to know about the component for it use it..
+3) This is very useful because these two classes are loosely coupled which makes up a very good 
+software design as changes in one class do not impact the other class.
+4) Composition allows you to have a policy based design which is much more flexible than previous inheritance design.

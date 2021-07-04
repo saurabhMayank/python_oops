@@ -1,65 +1,67 @@
-from abc import ABC, abstractmethod
+from productivity import ProductivitySystem
+from hr import PayrollSystem
+from contacts import AddressBook
+
+class EmployeeDatabase:
+    def __init__(self):
+        self._employees = [
+            {
+                'id': 1,
+                'name': 'Mary Poppins',
+                'role': 'manager'
+            },
+            {
+                'id': 2,
+                'name': 'John Smith',
+                'role': 'secretary'
+            },
+            {
+                'id': 3,
+                'name': 'Kevin Bacon',
+                'role': 'sales'
+            },
+            {
+                'id': 4,
+                'name': 'Jane Doe',
+                'role': 'factory'
+            },
+            {
+                'id': 5,
+                'name': 'Robin Williams',
+                'role': 'secretary'
+            },
+        ]
+        self.productivity = ProductivitySystem()
+        self.payroll = PayrollSystem()
+        self.employee_addresses = AddressBook()
+
+    @property
+    def employees(self):
+        return [self._create_employee(**data) for data in self._employees]
+
+    def _create_employee(self, id, name, role):
+        address = self.employee_addresses.get_employee_address(id)
+        employee_role = self.productivity.get_role(role)
+        payroll_policy = self.payroll.get_policy(id)
+        return Employee(id, name, address, employee_role, payroll_policy)
+
+
 
 # Employee class, see concepts.txt for further explanation
 class Employee(ABC):
-    def __init__(self, id, name):
+    def __init__(self, id, name, address, role, payroll_policy):
         self.id = id
         self.name = name
-        self.address = None
+        self.address = address
+        self.role = role
+        self.payroll_policy = payroll_policy
     
-    @abstractmethod
+     def work(self, hours):
+        duties = self.role.perform_duties(hours)
+        print(f'Employee {self.id} - {self.name}:')
+        print(f'- {duties}')
+        print('')
+        self.payroll.track_work(hours)
+
     def calculate_payroll(self):
-        pass
-
-# Categories of employee, see concepts.txt for further explanation
-class SalaryEmployee(Employee):
-    def __init__(self, id, name, weekly_salary):
-        super().__init__(id, name)
-        self.weekly_salary = weekly_salary
-    
-    def calculate_payroll(self):
-        return self.weekly_salary
-
-class HourlyEmployee(Employee):
-    def __init__(self, id, name, hour_worked, hour_rate):
-        super().__init__(id, name)
-        self.hour_worked = hour_worked
-        self.hour_rate =  hour_rate
-    
-    def calculate_payroll(self):
-        return self.hour_worked * self.hour_rate
-
-class CommisionEmployee(SalaryEmployee):
-    def __init__(self, id, name, weekly_salary, commision):
-        super().__init__(id, name, weekly_salary)
-        self.commision = commision
-    
-    def calculate_payroll(self):
-        fixed = super().calculate_payroll()
-        variable = self.commision
-        return fixed+variable
-
-
-
-# Types of employee, see concepts.txt for further explanation
-class Manager(SalaryEmployee):
-    def work(self, hours):
-        print(f'{self.name} screams and yells for {hours} hours.')
-
-class Secretary(SalaryEmployee):
-    def work(self, hours):
-        print(f'{self.name} spends {hours} doing office paper work.')
-
-class SalesPerson(CommisionEmployee):   
-    def work(self, hours):
-        print(f'{self.name} spends {hours} on the phone.')
-
-
-
-class TemporarySecretary(Secretary, HourlyEmployee):
-    def __init__(self, id, name, hours_worked, hour_rate):
-        HourlyEmployee.__init__(self, id, name, hours_worked, hour_rate)
-    
-    def calculate_payroll(self):
-        return HourlyEmployee.calculate_payroll(self)
-
+        return self.payroll.calculate_payroll(
