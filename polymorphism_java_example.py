@@ -6,22 +6,32 @@ package com.ramesh.ood.concepts.polymorphism;
 
 ///** 
 // * Polymorphism = single interface multiple implementations.
+// * In the below example -> Payment interface is implemented by CardPayment class and CashPayment Class
+// * So object of Payment Interface, can be of Card or Cash payment -> decided on runtime -> Need not re-initialise two payment objects
+// * for two classes -> saving lot of space
 // *
-// * How Polymorphism is supported in Java? - In terms of interface, inheritance, method overloading and method overriding. 
-// * (Method overloading and method overriding uses concept of Polymorphism in Java where method name remains same in two classes, 
-// * but actual method called by JVM depends upon object at run time and done by dynamic binding in Java. In case of overloading method 
-// * signature changes while in case of overriding method signature remains same and binding and invocation of method is decided on 
-// * runtime based on actual object. This facility allows Java programmer to write very flexibly and maintainable code using interfaces 
-// * without worrying about concrete implementation. One disadvantage of using Polymorphism in code is that while reading code you don't 
-// * know the actual type which annoys while you are looking to find bugs or trying to debug program. But if you do Java debugging in 
-// * IDE you will definitely be able to see the actual object and the method call and variable associated with it.)
-// *
-// * Where to use Polymorphism in code? - You should use super type in method argument, variable name and return type of method.
-// *
-// * Parameteric Polymorphism in Java - Java started to support parametric polymorphism with introduction of Generic in JDK1.5. Collection 
-// * classes in JDK 1.5 are written using Generic Type which allows Collections to hold any type of object in run time without any change 
-// * in code and this has been achieved by passing actual Type as parameter. 
-// */
+// * Access objects of different types through the same interface
+// * Each type can provide its own independent implementation of this interface.
+	
+// * Compile time Polymorphism -> Method overloading
+// * multiple methods within the same class that `use the same name`
+// * Methods should differ in -> 
+	// * different number of parameters, one method accepting 2 and another one accepting 3 parameters
+	// * types of the parameters need to be different, one method accepting a String and another one accepting a Long
+// * Due to the different sets of parameters, each method has a different signature. 
+
+
+	
+// * Run time Polymorphism -> Method Overriding
+// * a subclass can override a method of its superclass, enabling the developer of the subclass 
+// to customize or completely replace the behavior of that method
+	
+// * Both methods implemented by the super- and subclasses share the same name and parameters. 
+// However, they provide different functionality.
+
+/**
+	
+
 
 //---------------------------------------
 //--- STEP 01 - UNDERSTAND POLYMORPHISM BY SIMPLE EXAMPLE
