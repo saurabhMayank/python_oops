@@ -6,6 +6,25 @@ package com.ramesh.ood.concepts.polymorphism;
 
 ///** 
 // * Polymorphism = single interface multiple implementations.
+// * Polymorphism simply means "many forms"
+// * Polymorphism in very simple terms
+
+
+Imagine you have a toolbox with different tools like a hammer, a screwdriver, and a paintbrush. 
+They all serve a similar purpose – doing repairs – but in different ways. That's kind of like polymorphism in programming!
+
+In coding, it allows objects to behave differently even though they share the same type. 
+Here's how it works:
+
+Think of different tools as different classes in your code.
+Each class has its own "shape" (methods and properties) based on its specific purpose.
+But they all follow a blueprint (interface) for "doing repairs". This interface defines what methods they must have, like fix() or maintain().
+Now, when you call the fix() method on any of the tools (objects), 
+each one performs its own unique action – hammering, screwing, or painting – even though they were called using the same name.
+This is the magic of polymorphism: you code to the general interface, but get specific behaviors 
+depending on the type of object you're using. It makes your code flexible and powerful.
+
+	
 // * In the below example -> Payment interface is implemented by CardPayment class and CashPayment Class
 // * So object of Payment Interface, can be of Card or Cash payment -> decided on runtime -> Need not re-initialise two payment objects
 // * for two classes -> saving lot of space
