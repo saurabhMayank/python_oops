@@ -10,11 +10,14 @@ Abstraction in layman terms (from chatgpt)
 Abstraction is a concept in software engineering that involves reducing complexity by hiding unnecessary details and focusing on essential features. 
 It allows us to create simplified models of complex systems, which can be easier to understand, use, and maintain.
 Think of abstraction like a TV remote control. When you use a remote control, you don't need to know how the TV works or how the signal 
-is transmitted to change the channel. You simply press a button and the TV responds. The remote control abstracts away the complex details of the 
-TV system, allowing you to interact with it in a simple and intuitive way.
+is transmitted to change the channel. You simply press a button and the TV responds.
+
+The remote control abstracts away the complex details of the TV system, allowing you to interact with it in a simple and intuitive way.
+
 Similarly, in software engineering, we use abstraction to hide complex implementation details and focus on essential features. 
 For example, we might create a high-level interface for a database system that allows us to perform simple operations like adding, deleting, 
 or querying records, without needing to know the details of how the data is stored or managed.
+
 Abstraction also allows us to create modular, reusable components that can be used in different contexts. By separating out the essential 
 features of a system and hiding the implementation details, we can create components that are more flexible, adaptable, and maintainable.
 Overall, abstraction is an important concept in software engineering that helps us to manage complexity and create systems that are easier 
