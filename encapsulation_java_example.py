@@ -19,14 +19,18 @@ package com.ramesh.ood.concepts.encapsulation;
 In Layman terms Encapsulation (From Chat GPT)
 Encapsulation is a concept in object-oriented programming that involves grouping together related data and functions into a single unit, called a class. 
 This unit acts as a protective wrapper around the data and functions, preventing other parts of the program from accessing or modifying them directly.
+
+
 Think of encapsulation like a gift box. The gift inside the box represents the data and functions in a class. 
 The box itself represents the encapsulation,  or protection, around the gift.
-By encapsulating the data and functions in a class, we can control how they are accessed and used. We can define specific methods, or functions, 
+By encapsulating the data and functions in a class, we can control how they are accessed and used. 
+
+We can define specific methods, or functions, 
 that can be used to access or modify the data, while keeping the data itself hidden from other parts of the program.
 This has several benefits, including improved security, more efficient code, and easier maintenance.
 Encapsulation also helps to prevent unintended side effects that can occur when data is accessed or modified directly.
 Overall, encapsulation is an important concept in object-oriented programming that helps to improve the organization, efficiency, 
-and security of software.
+and security of software.						    
 **/
 
 
