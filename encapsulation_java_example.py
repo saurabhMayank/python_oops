@@ -6,19 +6,22 @@ package com.ramesh.ood.concepts.encapsulation;
 
 
 
-///**
-// * Encapsulation = Data hiding mechanism.
-// *
-// * The process of binding or wrapping the data and the codes that operates on the data into a single entity. This keeps the data safe from 
-// * outside interface and misuse. One way to think about encapsulation is as a protective wrapper that prevents code and data from being arbitrarily 
-// * accessed by other code defined outside the wrapper. 
-// * For example - if a field is declared private, it cannot be accessed by anyone outside the class, thereby hiding the fields within the class. 
-// */
+/**
+Encapsulation = Data hiding mechanism.
+
+The process of binding or wrapping the data and the codes that operates on the data into a single entity. This keeps the data safe from 
+outside interface and misuse. One way to think about encapsulation is as a protective wrapper that prevents code and data 
+from being arbitrarily accessed by other code defined outside the wrapper. 
+For example - if a field is declared private, it cannot be accessed by anyone outside the class, thereby hiding the fields within the class.
+
+**/
 
 /**
 In Layman terms Encapsulation (From Chat GPT)
-Encapsulation is a concept in object-oriented programming that involves grouping together related data and functions into a single unit, called a class. 
-This unit acts as a protective wrapper around the data and functions, preventing other parts of the program from accessing or modifying them directly.
+Encapsulation is a concept in object-oriented programming that involves grouping together related data and 
+functions into a single unit, called a class. 
+This unit acts as a protective wrapper around the data and functions, preventing other parts of the program
+from accessing or modifying them directly.
 
 
 Think of encapsulation like a gift box. The gift inside the box represents the data and functions in a class. 
