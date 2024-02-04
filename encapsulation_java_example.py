@@ -1,7 +1,7 @@
 package com.ramesh.ood.concepts.encapsulation;
 
 //---------------------------------------
-//--- STEP 00 - WHAT IS ABSTRACTION & ENCAPSULATION? 
+//--- STEP 00 - WHAT IS ENCAPSULATION? 
 //---------------------------------------
 
 
