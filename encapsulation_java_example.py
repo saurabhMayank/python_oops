@@ -33,7 +33,13 @@ that can be used to access or modify the data, while keeping the data itself hid
 This has several benefits, including improved security, more efficient code, and easier maintenance.
 Encapsulation also helps to prevent unintended side effects that can occur when data is accessed or modified directly.
 Overall, encapsulation is an important concept in object-oriented programming that helps to improve the organization, efficiency, 
-and security of software.						    
+and security of software.
+
+
+In Python -> Encapsulation Can be Achieved through getters and setters methods
+Other classes are not allowed to directly access data attribute Class A. They can access Data attributes of Class A via getters and setters
+methods, where Access Patterns can be controlled
+
 **/
 
 
